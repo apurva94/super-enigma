@@ -29,6 +29,9 @@ pip install -e .
 pip install -r requirements.txt
 kaggle competitions download -c global-wheat-detection      # get data from kaggle
 unzip global-wheat-detection.zip                            # unzip the data 
+
+# clone your model's repo
+!git clone https://github.com/facebookresearch/detr.git  -q  # used for loss function , architecture and training logic
  ```   
 Get the dataset into folder called data.
 
