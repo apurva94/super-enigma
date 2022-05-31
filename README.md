@@ -14,6 +14,8 @@ End to end architecture using Pytorch Lightning.
 Compatible with any object detection model as long as they are in pytorch and have a loss/training logic.
 Training monitoring using Weights and Bias.
 
+Right now the repo trains DETR model on [Wheat head detection data](https://www.kaggle.com/competitions/global-wheat-detection/data)
+Initial [Kaggle Notebook](https://www.kaggle.com/code/karkisa/small-object-detection-using-pytorch-lightning)
 
 ## How to run   
 First, install dependencies   
