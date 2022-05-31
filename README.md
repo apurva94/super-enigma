@@ -18,7 +18,7 @@ Right now the repo trains DETR model on [Wheat head detection data](https://www.
 
 Initial [Kaggle Notebook](https://www.kaggle.com/code/karkisa/small-object-detection-using-pytorch-lightning)
 
-## How to run   
+## How to run {example}
 First, install dependencies   
 ```bash
 # clone project   
@@ -27,6 +27,8 @@ git clone https://github.com/karkisa/super-enigma.git
 cd super-enigma 
 pip install -e .   
 pip install -r requirements.txt
+kaggle competitions download -c global-wheat-detection      # get data from kaggle
+unzip global-wheat-detection.zip                            # unzip the data 
  ```   
 Get the dataset into folder called data.
 
