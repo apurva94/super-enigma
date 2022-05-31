@@ -19,10 +19,9 @@ Training monitoring using Weights and Bias.
 First, install dependencies   
 ```bash
 # clone project   
-git clone https://github.com/YourGithubName/deep-learning-project-template
-
+git clone https://github.com/karkisa/super-enigma.git
 # install project   
-cd deep-learning-project-template 
+cd super-enigma 
 pip install -e .   
 pip install -r requirements.txt
  ```   
