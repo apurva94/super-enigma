@@ -66,10 +66,9 @@ def main():
 
 ### Citation   
 ```
-@article{YourName,
-  title={Your Title},
-  author={Your team},
-  journal={Location},
-  year={Year}
+@article{Sagar Karki,
+  title={Super Sonic Speed Prototyping Object Detection Research Rapers},
+  author={Sagar Karki},
+  year={2022}
 }
 ```   
