@@ -1,41 +1,19 @@
-### Deep learning project seed
-Use this seed to start new deep learning / ML projects.
-
-- Built in setup.py
-- Built in requirements
-- Examples with MNIST
-- Badges
-- Bibtex
-
-#### Goals  
-The goal of this seed is to structure ML paper-code the same so that work can easily be extended and replicated.   
-
-### DELETE EVERYTHING ABOVE FOR YOUR PROJECT  
- 
 ---
 
 <div align="center">    
  
-# Your Project Name     
-
-[![Paper](http://img.shields.io/badge/paper-arxiv.1001.2234-B31B1B.svg)](https://www.nature.com/articles/nature14539)
-[![Conference](http://img.shields.io/badge/NeurIPS-2019-4b44ce.svg)](https://papers.nips.cc/book/advances-in-neural-information-processing-systems-31-2018)
-[![Conference](http://img.shields.io/badge/ICLR-2019-4b44ce.svg)](https://papers.nips.cc/book/advances-in-neural-information-processing-systems-31-2018)
-[![Conference](http://img.shields.io/badge/AnyConference-year-4b44ce.svg)](https://papers.nips.cc/book/advances-in-neural-information-processing-systems-31-2018)  
-<!--
-ARXIV   
-[![Paper](http://img.shields.io/badge/arxiv-math.co:1480.1111-B31B1B.svg)](https://www.nature.com/articles/nature14539)
--->
-![CI testing](https://github.com/PyTorchLightning/deep-learning-project-template/workflows/CI%20testing/badge.svg?branch=master&event=push)
+# Super Sonic Speed Prototyping Object Detection Research Rapers     
 
 
-<!--  
-Conference   
--->   
 </div>
  
+ 
 ## Description   
-What it does   
+Object Detection on any data set using supervised learning.
+End to end architecture using Pytorch Lightning. 
+Compatible with any object detection model as long as they are in pytorch and have a loss/training logic.
+Training monitoring using Weights and Bias.
+
 
 ## How to run   
 First, install dependencies   
@@ -48,34 +26,43 @@ cd deep-learning-project-template
 pip install -e .   
 pip install -r requirements.txt
  ```   
- Next, navigate to any file and run it.   
- ```bash
-# module folder
-cd project
+Get the dataset into folder called data.
 
-# run module (example: mnist as your main contribution)   
-python lit_classifier_main.py    
+Change the paths based on paths on your machine
+# Research Playground
+python Playground.py    
 ```
+def main():
+    #train_df_path on your 
+    train_df_path='/data/train.csv'
+    seed=42
+    seed_everything(seed)
+    fold_df,markings=display_(train_df_path,seed=seed)
+    bs=64
+    fold=2
+    model=DETRModel(num_classes=2,num_queries=100)
+    c=SetCriterion(1, matcher=HungarianMatcher(), weight_dict={'loss_ce': 1, 'loss_bbox': 1 , 'loss_giou': 1}, eos_coef = 0.5, losses=['labels', 'boxes', 'cardinality']).to('cuda')
+    run_ = wandb.init(
+                        project='e3e3',
+                        group=str(fold),
+                        name='exp13'
+                    )
 
-## Imports
-This project is setup as a package which means you can now easily import any file into any other file like so:
-```python
-from project.datasets.mnist import mnist
-from project.lit_classifier_main import LitClassifier
-from pytorch_lightning import Trainer
-
-# model
-model = LitClassifier()
-
-# data
-train, val, test = mnist()
-
-# train
-trainer = Trainer()
-trainer.fit(model, train, val)
-
-# test using the best model!
-trainer.test(test_dataloaders=test)
+    Classifier=classifier(
+        WheatDataset,
+        bs,
+        markings,
+        fold_df,
+        model,
+        c,
+        run_,
+        fold=fold
+    )
+    
+    Trainer=pl.Trainer(devices=1, accelerator="gpu",
+                       max_epochs=35,
+                      )
+    Trainer.fit(Classifier)
 ```
 
 ### Citation   
