@@ -84,7 +84,7 @@ def get_valid_transforms():
                       )
 
 class WheatDataset(Dataset):
-    def __init__(self,image_ids,dataframe,transforms=None,DIR_TRAIN='/nfs/hpc/share/karkisa/Thesis (Action_Seg)/Research paper implementations/Wheat_Detection/data/train'):
+    def __init__(self,image_ids,dataframe,transforms=None,DIR_TRAIN='train'):
         self.image_ids = image_ids
         self.df = dataframe
         self.transforms = transforms
