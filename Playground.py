@@ -3,7 +3,7 @@ import pdb
 import pytorch_lightning as pl
 
 import sys
-sys.path.append('/nfs/hpc/share/karkisa/Thesis (Action_Seg)/Research paper implementations/Wheat_Detection/detr')
+sys.path.append('detr')
 
 from detr.models.matcher import HungarianMatcher
 from detr.models.detr import SetCriterion
@@ -20,7 +20,7 @@ from Logic import classifier
 def main():
     # import  torchmetrics
     # p=detection.mean_ap.MeanAveragePrecision
-    train_df_path='/nfs/hpc/share/karkisa/Thesis (Action_Seg)/Research paper implementations/Wheat_Detection/data/train.csv'
+    train_df_path='train.csv'
     seed=42
     seed_everything(seed)
     fold_df,markings=display_(train_df_path,seed=seed)
