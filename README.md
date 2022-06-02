@@ -12,7 +12,8 @@
 Object Detection on any data set using supervised learning.
 End to end architecture using Pytorch Lightning. 
 Compatible with any object detection model as long as they are in pytorch and have a loss/training logic.
-Training monitoring using Weights and Bias.
+[Monitoring training](https://wandb.ai/karkisa/Super_Enigma/runs/3apwmdvb?workspace=user-karkisa) using Weights and Bias.
+
 
 Right now the repo trains DETR model on [Wheat head detection data](https://www.kaggle.com/competitions/global-wheat-detection/data)
 
