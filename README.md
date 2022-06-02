@@ -34,7 +34,6 @@ unzip global-wheat-detection.zip                            # unzip the data
 # clone your model's repo
 !git clone https://github.com/facebookresearch/detr.git  -q  # used for loss function , architecture and training logic
  ```   
-Get the dataset into folder called data.
 
 Change the paths based on paths on your machine
 # Research Playground
