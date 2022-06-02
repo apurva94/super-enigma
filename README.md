@@ -41,7 +41,7 @@ python Playground.py
 ```
 def main():
     #train_df_path on your 
-    train_df_path='/data/train.csv'
+    train_df_path='train.csv'
     seed=42
     seed_everything(seed)
     fold_df,markings=display_(train_df_path,seed=seed)
@@ -50,9 +50,9 @@ def main():
     model=DETRModel(num_classes=2,num_queries=100)
     c=SetCriterion(1, matcher=HungarianMatcher(), weight_dict={'loss_ce': 1, 'loss_bbox': 1 , 'loss_giou': 1}, eos_coef = 0.5, losses=['labels', 'boxes', 'cardinality']).to('cuda')
     run_ = wandb.init(
-                        project='e3e3',
+                        project='super-enigma',
                         group=str(fold),
-                        name='exp13'
+                        name='exp1'
                     )
 
     Classifier=classifier(
