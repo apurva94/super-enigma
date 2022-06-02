@@ -2,7 +2,7 @@
 
 <div align="center">    
  
-# Super Sonic Speed Prototyping Object Detection Research Rapers     
+# Quick Prototyping Object Detection Research Rapers     
 
 
 </div>
