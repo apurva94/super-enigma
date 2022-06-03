@@ -2,7 +2,7 @@
 
 <div align="center">    
  
-# Quick Prototyping Object Detection Research Rapers     
+# Quick Prototyping Object Detection Research Paper    
 
 
 </div>
